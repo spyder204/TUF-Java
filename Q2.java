@@ -7,32 +7,28 @@ public class Q2 {
         int t = arr[x];
         arr[x] = arr[y];
         arr[y] = t;
+
     }
 
     public static void sort(int[] arr) {
         int low, mid, high;
-        low = mid =0;
+        low = mid = 0;
         high = arr.length-1;
         
         while(mid<=high){
             if(arr[mid] == 1)
                 mid++;
-            if(arr[mid] == 0)
+            else if(arr[mid] == 0)
                 swap(mid++, low++, arr);
-            if(arr[mid] == 2)
+            else
                 swap(mid, high--, arr);
-            
         }
-
     }
-    
-    
     public static void main(String[] args) {
-        int[] arr = {2,0,2,1,1,0};
+        int[] arr = {2,0,1};
         sort(arr);
-        for (int i : arr) {
-            System.out.println(i);
+       for (int i : arr) {
+            System.out.print(i+" ");
         }
     }
-    
 }
